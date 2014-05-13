@@ -1,9 +1,12 @@
 language: node_js
-node_js: 0.10.x
+node_js:
+  - "0.10.x"
+
 deploy:
   provider: heroku
   api_key:
     secure: RCy9E4ZFBhpcj6OpmusghWEcnwuQBwyV+PMksr7vydTjrp3cquV+nbaAXLIt4XnXMLRi2yoiwxDSHT6thBwNYV4F9Iu80XDVHh8Jgu2XcaRZMWnshz0VP1N7COI/bd/5lcrfLKClGCm1hb6bHko3PYAU+4DAY8HF6b07nOL6STE=
   app: mtasupport-ircbot
+  strategy: git
   on:
     repo: qaisjp/mtasupport-ircbot
