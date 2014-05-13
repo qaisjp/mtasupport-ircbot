@@ -15,7 +15,7 @@ addCommand("help", function(from, to) {
 	for (var i = 0; i < HelpMessages.length; i++) {
 		client.say(from, HelpMessages[i]);
 	}
-}, "!help shows dis message");	
+}, "!help shows dis message");
 
 
 addMessageListener( function(message, from, to){
@@ -31,6 +31,15 @@ addMessageListener( function(message, from, to){
 	}
 },
 "saying crash in a message will show the crash topic. this will only show once per nick, per join");
+
+addMessageListener( function(message, from, to){
+	if (message.search("samp") != -1){
+			console.log("Received SAMP message from " + from + ".");
+			client.say(to, from  + ", leave, peasant.");
+			return true;
+	}
+},
+"saying samp is a bad idea");
 
 addMessageListener( function(message, from, to){
 	if (message.search(" asi ") != -1){
@@ -78,16 +87,6 @@ addMessageListener( function(message, from, to){
 	}
 },
 "saying smth under 10 chars gives you a msg, once per join")
-
-addMessageListener( function(message, from, to){
-	if (message.search("samp") != -1){
-			console.log("Received SAMP message from " + from + ".");
-			client.say(to, from  + ", get the fuck out you fucking samp faggot, bitch!");
-			return true;
-	}
-},
-"saying samp is a bad idea");
-
 
 
 client.addListener('join', function(channel, nick, message) {
