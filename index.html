@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+		<title>MTASupport IRC bot</title>
+	</head>
+	<body style="overflow:hidden;">
+		<header style="display:fixed;">
+			<span id="connected">Connected members: ..</span> | <span id="record">Total members connected this session: ..</span> | <span id="users">Users in channel: ..</span>
+			<hr>
+		</header>
+		<h1>Console output</h1>
+		<div style="overflow:hidden"><div id='console' style='overflow: scroll; height:80%'></div></div>
+
+		<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1-rc2/jquery.min.js'></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			var socket = io.connect('/');
+		  	socket.on('consoleMessage', function (data) {
+			    $("#console").append(data + "<br>");
+			    var elem = document.getElementById('console');
+  				elem.scrollTop = elem.scrollHeight;
+		  	});
+
+		  	socket.on('updateConnected', function (connected, record) {
+		  		$("#connected").html("Connected members: " + (connected || ".."));
+		  		if (record){
+		  			$("#record").html("Total members connected this session: " + record);
+		  		}
+		  	});
+
+		  	socket.on('usersOnChannel', function (connected) {
+		  		$("#users").html("Users in channel: " + (connected || ".."));
+		  	});
+		</script>
+	</body>
+</html>
