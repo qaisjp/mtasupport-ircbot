@@ -4,6 +4,11 @@ UnderTen = [];
 
 addCommand("reinstall", "Please reinstall MTA using this link: http://nightly.mtasa.com/?mtasa-1.3.5-full-latest", "!reinstall gives instructions for reinstalling, giving a link to the latest mtasa build");
 addCommand("update", "Please update MTA using this link: http://nightly.mtasa.com/?mtasa-1.3.5-full-latest", "!update gives instructions for updating, giving a link to the latest mtasa build");
+addCommand("blue", "Here is a link to the MTA:Blue repository: https://code.google.com/p/mtasa-blue", "!blue -> blue gcode repo");
+addCommand("repo", "Here is a link to the MTASupport repository: https://github.com/qaisjp/mtasupport-ircbot", "!repo -> github bot repo");
+addCommand("wiki", "Here is a link to the MTA wiki: https://wiki.mtasa.com", "!wiki -> mtawikilink");
+addCommand("forum", "Please make a forum post about it here: http://forum.mtasa.com", "!forum tells someoen to make a forum post about it");
+addCommand("report", "Please make a report about it here: http://bugs.mtasa.com", "!report tells someoen to make a bug report about it");
 addCommand("crash", "If your MTA is crashing, please visit this link: https://forum.mtasa.com/viewtopic.php?t=31668.", "!crash gives a link to the crash forum topic");
 addCommand("diag", "Please run MTADiag. You may find it here: https://forum.mtasa.com/viewtopic.php?t=37813", "!diag gives a link to the diag message");
 addCommand("dataja", "Don't ask to ask, just ask!™", "!dataja says don't ask to ask just ask");
